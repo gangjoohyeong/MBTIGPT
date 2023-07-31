@@ -1,7 +1,7 @@
 {% if chatroom_list %}
     <ul>
     {% for chatroom in chatroom_list %}
-        <li><a href="{% url 'chat:detail' chatroom.id %}}/">{{ chatroom.title }}</a></li>
+        <li><a href="{% url 'chat:detail' chatroom.id %}">{{ chatroom.title }}</a></li>
     {% endfor %}
     </ul>
 {% else %}
