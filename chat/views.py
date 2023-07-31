@@ -2,6 +2,8 @@ from django.shortcuts import render, get_object_or_404, redirect
 from django.utils import timezone
 from .models import Chatroom, Qna
 from chat.gpt import gpt_prompt
+from django.views.decorators.csrf import csrf_exempt
+from django.http import JsonResponse
 
 
 
@@ -17,14 +19,19 @@ def detail(request, chatroom_id):
     context = {'chatroom': chatroom}
     return render(request, 'chat/chatroom_detail.html', context)
 
+
+@csrf_exempt
 def qna_create(request, chatroom_id):
-    chatroom = get_object_or_404(Chatroom, pk=chatroom_id)
-    # chatroom.qna_set.create(question=request.POST.get('question'), answer='더미 answer', create_date=timezone.now())
-    
-    question = request.POST.get('question')
-    answer = gpt_prompt(question)
-    
-    qna = Qna(chatroom=chatroom, question=question, answer=answer, create_date=timezone.now())
-    qna.save()
-    
-    return redirect('chat:detail', chatroom_id=chatroom.id)
+    if request.method == "POST":
+        chatroom = get_object_or_404(Chatroom, pk=chatroom_id)
+
+        question = request.POST.get('question')
+        answer = gpt_prompt(question)
+
+        qna = Qna(chatroom=chatroom, question=question, answer=answer, create_date=timezone.now())
+        qna.save()
+
+        # JSON 형식으로 반환
+        return JsonResponse({"answer": answer})
+    else:
+        return JsonResponse({"error": "Invalid request method"}, status=400)

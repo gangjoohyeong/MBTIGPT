@@ -1,54 +1,98 @@
-{% load static %} 
-<!DOCTYPE html> 
-<html lang="ko"> 
-    <head> 
-        <meta charset="UTF-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-        <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}"> 
-    </head> 
+{% load static %}
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script>
+            function submitQuestionForm() {
+                let chatroom = document.getElementById("chatroom");
+                let question = document.getElementById("question").value;
+                let questionBubble = document.createElement("div");
+                let answerBubble = document.createElement("div");
+                let chat = document.createElement("div");
+
+                chatroom.appendChild(chat);
+                chat.className = "chat";
+                chat.appendChild(questionBubble);
+                chat.appendChild(answerBubble);
+
+                questionBubble.innerText = question;
+                questionBubble.className = "question_bubble";
+
+                answerBubble.innerText = "...";
+                answerBubble.className = "answer_bubble";
+
+                fetchAnswer(question, function(answer) {
+                        answerBubble.innerText = answer;
+                });
+
+                document.getElementById("question").value = "";
+                event.preventDefault();
+            }
+
+            function fetchAnswer(question, callback) {
+                $.ajax({
+                    url: "{% url 'chat:qna_create_ajax' chatroom.id %}",
+                    method: "POST",
+                    data: {
+                        question: question,
+                        csrfmiddlewaretoken: '{{ csrf_token }}'
+                    },
+                    success: function(response) {
+                        callback(response['answer']);
+                    }
+                });
+            }
+
+            document.addEventListener('DOMContentLoaded', function () {
+                var questionElement = document.getElementById('question');
+            
+                questionElement.addEventListener('keydown', function (event) {
+                    var keyCode = event.keyCode || event.which;
+            
+                    if (event.shiftKey && keyCode === 13) {
+                        event.preventDefault();
+                        var selectionStart = questionElement.selectionStart;
+                        var selectionEnd = questionElement.selectionEnd;
+                        var value = questionElement.value;
+            
+                        questionElement.value = value.slice(0, selectionStart) + '\n' + value.slice(selectionEnd);
+                        questionElement.selectionEnd = selectionStart + 1;
+                    } else if (keyCode === 13) {
+                        event.preventDefault();
+                        document.querySelector('.submit_button').click();
+                    }
+                });
+            
+                questionElement.addEventListener('input', function (event) {
+                    questionElement.style.height = 'auto';
+                    questionElement.style.height = (questionElement.scrollHeight) + 'px';
+                });
+            });
+        </script>
+    </head>
     <body>
-    <h1> {{ chatroom.title }}</h1>
-    
-    <div class="chatroom">
-        {% for qna in chatroom.qna_set.all %}
-            <div class="chat">
-                <div class="question_bubble">
-                    {{ qna.question }}
+        <h1>{{ chatroom.title }}</h1>
+
+        <div id="chatroom" class="chatroom">
+            {% for qna in chatroom.qna_set.all %}
+                <div class="chat">
+                    <div class="question_bubble">
+                        {{ qna.question }}
+                    </div>
+                    <div class="answer_bubble">
+                        {{ qna.answer }}
+                    </div>
                 </div>
-                <div class="answer_bubble">
-                    {{ qna.answer }}
-                </div>
-            </div>
-        {% endfor %}
-    </div>
+            {% endfor %}
+        </div>
     
-    <form class="submit_form" action="{% url 'chat:qna_create' chatroom.id %}" method="post">
-        {% csrf_token %}
-        <input name="question" id="question">
-        <input class="submit_button" type="submit" value=">">
-    </form>
-    <script>
-        function submitForm(event) {
-            event.preventDefault(); // 폼 제출 막기
-    
-            const questionInput = document.getElementById('question');
-            const questionValue = questionInput.value.trim();
-    
-            if (questionValue !== '') {
-                // 사용자가 question을 작성한 경우에만 제출 수행
-                document.getElementById('qna_form').submit();
-                questionInput.value = ''; // question 비워주기
-            }
-        }
-        document.getElementById('question').addEventListener('keydown', function(e) {
-            if (e.key === 'Enter') {
-                e.preventDefault();
-                if (e.shiftKey) {
-                    // Shift + Enter 누르면 줄바꿈
-                    this.value += '\n';
-                } else {
-                    // Enter 누르면 submitForm 함수 호출
-                    submitForm(e);
-                }
-            }
-        });
-    </script>
+        <form class="submit_form" onsubmit="submitQuestionForm();">
+            {% csrf_token %}
+            <textarea name="question" id="question" rows="1" placeholder="질문을 입력하세요."></textarea>
+            <button type="submit" class="submit_button">&gt;</button>
+        </form>
+    </body>
+</html>
