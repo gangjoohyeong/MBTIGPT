@@ -1,3 +1,6 @@
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+
 <h1> {{ chatroom.title }}</h1>
 
 <div>방 생성일: {{chatroom.create_date}}</div>
