@@ -1,3 +1,19 @@
 <h1> {{ chatroom.title }}</h1>
 
-<div>{{chatroom.create_date}}</div>
+<div>방 생성일: {{chatroom.create_date}}</div>
+
+<h4> {{ chatroom.qna_set.count }} 개의 질문이 있습니다.</h4>
+<div>
+    <ul>
+        {% for qna in chatroom.qna_set.all %}
+            <li><b>질문:</b> {{ qna.question }}, <b>답변:</b> {{ qna.answer }}</li>
+        {% endfor %}
+    </ul>
+</div>
+
+
+<form action ="{% url 'chat:qna_create' chatroom.id %}" method="post">
+    {% csrf_token %}
+    <textarea name="question" id="question" rows="5"></textarea>
+    <input type="submit" value="질문등록">
+</form>
