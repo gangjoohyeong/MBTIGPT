@@ -12,7 +12,7 @@
                 let questionBubble = document.createElement("div");
                 let answerBubble = document.createElement("div");
                 let chat = document.createElement("div");
-
+                
                 chatroom.appendChild(chat);
                 chat.className = "chat";
                 chat.appendChild(questionBubble);
@@ -21,13 +21,18 @@
                 questionBubble.innerText = question;
                 questionBubble.className = "question_bubble";
 
-                answerBubble.innerText = "...";
-                answerBubble.className = "answer_bubble";
+
+                window.scrollTo(0, document.body.scrollHeight);
 
                 fetchAnswer(question, function(answer) {
+                    setTimeout(function() {
                         answerBubble.innerText = answer;
+                        answerBubble.className = "answer_bubble";
+                        window.scrollTo(0, document.body.scrollHeight);
+                    }, 1500);
                 });
-
+                
+                
                 document.getElementById("question").value = "";
                 event.preventDefault();
             }
@@ -63,6 +68,7 @@
                     } else if (keyCode === 13) {
                         event.preventDefault();
                         document.querySelector('.submit_button').click();
+                        questionElement.style.height = 'auto';
                     }
                 });
             
@@ -82,7 +88,7 @@
                     <div class="question_bubble">
                         {{ qna.question }}
                     </div>
-                    <div class="answer_bubble">
+                    <div class="answer_bubble" id="answerBubble{{ forloop.counter }}">
                         {{ qna.answer }}
                     </div>
                 </div>
@@ -91,7 +97,7 @@
     
         <form class="submit_form" onsubmit="submitQuestionForm();">
             {% csrf_token %}
-            <textarea name="question" id="question" rows="1" placeholder="질문을 입력하세요."></textarea>
+            <textarea name="question" id="question" rows="1" placeholder="..."></textarea>
             <button type="submit" class="submit_button">&gt;</button>
         </form>
     </body>

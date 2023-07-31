@@ -38,6 +38,11 @@ h1 {
     flex-direction: column;
 }
 
+@keyframes fadeInUp {
+    0% { opacity: 0; transform: translateY(20px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
 .question_bubble {
     align-self: flex-end;
     max-width: 60%;
@@ -47,7 +52,10 @@ h1 {
     border-radius: 18px 0px 18px 18px;
     color: #FFF;
     margin-bottom: 15px;
+    animation: fadeInUp 1s forwards;
 }
+
+
 
 .answer_bubble {
     align-self: flex-start;
@@ -58,6 +66,7 @@ h1 {
     border-radius: 0px 18px 18px 18px;
     color: #FFF;
     margin-bottom: 15px;
+    animation: fadeInUp 1s forwards;
 }
 
 .submit_form {
