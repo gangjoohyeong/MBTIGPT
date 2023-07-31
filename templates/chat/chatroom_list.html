@@ -1,0 +1,9 @@
+{% if chatroom_list %}
+    <ul>
+    {% for chatroom in chatroom_list %}
+        <li><a href="/chat/{{ chatroom.id }}/">{{ chatroom.title }}</a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>채팅방이 없습니다.</p>
+{% endif %}
