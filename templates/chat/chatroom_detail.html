@@ -1,22 +1,54 @@
-{% load static %}
-<link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
-
-<h1> {{ chatroom.title }}</h1>
-
-<div>방 생성일: {{chatroom.create_date}}</div>
-
-<h4> {{ chatroom.qna_set.count }} 개의 질문이 있습니다.</h4>
-<div>
-    <ul>
+{% load static %} 
+<!DOCTYPE html> 
+<html lang="ko"> 
+    <head> 
+        <meta charset="UTF-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+        <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}"> 
+    </head> 
+    <body>
+    <h1> {{ chatroom.title }}</h1>
+    
+    <div class="chatroom">
         {% for qna in chatroom.qna_set.all %}
-            <li><b>질문:</b> {{ qna.question }}, <b>답변:</b> {{ qna.answer }}</li>
+            <div class="chat">
+                <div class="question_bubble">
+                    {{ qna.question }}
+                </div>
+                <div class="answer_bubble">
+                    {{ qna.answer }}
+                </div>
+            </div>
         {% endfor %}
-    </ul>
-</div>
-
-
-<form action ="{% url 'chat:qna_create' chatroom.id %}" method="post">
-    {% csrf_token %}
-    <textarea name="question" id="question" rows="5"></textarea>
-    <input type="submit" value="질문등록">
-</form>
+    </div>
+    
+    <form class="submit_form" action="{% url 'chat:qna_create' chatroom.id %}" method="post">
+        {% csrf_token %}
+        <input name="question" id="question">
+        <input class="submit_button" type="submit" value=">">
+    </form>
+    <script>
+        function submitForm(event) {
+            event.preventDefault(); // 폼 제출 막기
+    
+            const questionInput = document.getElementById('question');
+            const questionValue = questionInput.value.trim();
+    
+            if (questionValue !== '') {
+                // 사용자가 question을 작성한 경우에만 제출 수행
+                document.getElementById('qna_form').submit();
+                questionInput.value = ''; // question 비워주기
+            }
+        }
+        document.getElementById('question').addEventListener('keydown', function(e) {
+            if (e.key === 'Enter') {
+                e.preventDefault();
+                if (e.shiftKey) {
+                    // Shift + Enter 누르면 줄바꿈
+                    this.value += '\n';
+                } else {
+                    // Enter 누르면 submitForm 함수 호출
+                    submitForm(e);
+                }
+            }
+        });
+    </script>
