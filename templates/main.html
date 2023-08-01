@@ -3,17 +3,22 @@
 {% block content %}
 
 <div class="main_page">
+    {% if user.is_authenticated %}
+    <h1>{{ user.username }}님 환영합니다!</h1>
+    {% else %}
     <h1>환영합니다!</h1>
+    {% endif %}
+
     <div class="explaination">
         <b>MBTIGPT</b>는 인공지능에게 MBTI를 부여합니다.
     </div>
     <br><br>
 
-    <img src="{% static 'Component1.svg' %}" style="width:200px"/><br>
-    <img src="{% static 'Component2.svg' %}" style="width:200px"/><br>
-    <img src="{% static 'Component3.svg' %}" style="width:200px"/><br>
-    <img src="{% static 'Component4.svg' %}" style="width:200px"/><br>
-    <img src="{% static 'Component5.svg' %}" style="width:200px"/>
+    <img src="{% static 'Component1.svg' %}" style="width:170px"/><br>
+    <img src="{% static 'Component2.svg' %}" style="width:170px"/><br>
+    <img src="{% static 'Component3.svg' %}" style="width:170px"/><br>
+    <img src="{% static 'Component4.svg' %}" style="width:170px"/><br>
+    <img src="{% static 'Component5.svg' %}" style="width:170px"/>
 
 
 </div>

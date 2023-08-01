@@ -8,7 +8,7 @@
             <ul class="nav-links">
                 <li><a href="{% url 'chat:index' %}">Chat</a></li>
                 {% if user.is_authenticated %}
-                <li><a class="nav-link" href="{% url 'common:logout' %}">{{ user.username }} (Logout)</a></li>
+                <li><a class="nav-link" href="{% url 'common:logout' %}">Logout</a></li>
                 {% else %}
                 <li> <a class="nav-link" href="{% url 'common:login' %}">Login</a></li>
                 {% endif %}
@@ -24,5 +24,4 @@
         a:link { color:white; text-decoration: none;}
         a:visited { color: white; text-decoration: none;}
         a:hover { color: white; text-decoration: none;}
-       
-       </style>
+    </style>
