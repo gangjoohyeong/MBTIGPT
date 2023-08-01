@@ -1,10 +1,9 @@
 <header>
         <nav class="navbar">
             <div class="navbar-brand">
-                <h1>MBTIGPT</h1>
+                <h1><a href="{% url 'index' %}">MBTIGPT</a></h1>
             </div>
             <ul class="nav-links">
-                <li><a href="#">Home</a></li>
                 <li><a href="{% url 'chat:index' %}">Chat</a></li>
                 {% if user.is_authenticated %}
                 <li><a class="nav-link" href="{% url 'common:logout' %}">{{ user.username }} (Logout)</a></li>
@@ -13,9 +12,15 @@
                 {% endif %}
                 <li>
                     {% if not user.is_authenticated %}
-                    <a class="nav-link" href="{% url 'common:signup' %}">Signup</a>
+                    <a class="nav-link" href="{% url 'common:signup' %}">Sign up</a>
                     {% endif %}
                 </li>
             </ul>
         </nav>
     </header>
+    <style type="text/css">
+        a:link { color:white; text-decoration: none;}
+        a:visited { color: white; text-decoration: none;}
+        a:hover { color: white; text-decoration: none;}
+       
+       </style>

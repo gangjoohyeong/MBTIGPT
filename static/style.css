@@ -4,6 +4,18 @@ body {
     flex-direction: column;
 }
 
+.main_page {
+    margin: 0 auto;
+    text-align: center;
+}
+
+.main_page h1 {
+    color:#ccc;
+}
+.explaination {
+    color:white;
+}
+
 .detail_body {
     font-family: Arial, sans-serif;
     display: flex;
