@@ -1,7 +1,9 @@
+{% load static %}
+
 <header>
         <nav class="navbar">
             <div class="navbar-brand">
-                <h1><a href="{% url 'index' %}">MBTIGPT</a></h1>
+                <a href="{% url 'index' %}"><img src="{% static 'Component1.svg' %}" style="width:100px"/></a>
             </div>
             <ul class="nav-links">
                 <li><a href="{% url 'chat:index' %}">Chat</a></li>
