@@ -1,10 +1,12 @@
 # MBTIGPT
 
-<img width="1237" alt="스크린샷 2023-08-01 오후 5 30 00" src="https://github.com/gangjoohyeong/MBTIGPT/assets/93419379/83ec116f-072b-4d39-abbf-a7fb5fb8013a">
+<div align="center">
 
-<img width="1237" alt="스크린샷 2023-08-01 오후 5 33 28" src="https://github.com/gangjoohyeong/MBTIGPT/assets/93419379/72f1cffa-f4d6-4f15-8734-ac65aed6fa2c">
+<img width="800" alt="스크린샷 2023-08-01 오후 5 30 00" src="https://github.com/gangjoohyeong/MBTIGPT/assets/93419379/d32b4000-248e-46a3-a282-f28bda96ba4a">
 
+<img width="800" alt="스크린샷 2023-08-01 오후 5 33 28" src="https://github.com/gangjoohyeong/MBTIGPT/assets/93419379/9a6236a5-e564-4a30-8170-ed6ff0eb1ba8">
 
+</div>
 
 <br>
 
