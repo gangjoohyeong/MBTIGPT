@@ -1,6 +1,12 @@
 # MBTIGPT
 
+<br>
+
+
 <div align="center">
+
+데모 서비스: http://49.50.172.150:40005/
+
 
 <img width="800" alt="스크린샷 2023-08-01 오후 5 30 00" src="https://github.com/gangjoohyeong/MBTIGPT/assets/93419379/d32b4000-248e-46a3-a282-f28bda96ba4a">
 
