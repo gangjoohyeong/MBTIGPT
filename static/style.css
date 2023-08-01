@@ -10,7 +10,7 @@ body {
     flex-direction: column;
     min-height: 100vh;
     margin: 0;
-    background-color: #000; 
+    background-color: #000;
     font-size: 17px;
     padding: 0 150px 0 150px;
 
@@ -44,8 +44,15 @@ body {
 }
 
 @keyframes fadeInUp {
-    0% { opacity: 0; transform: translateY(20px); }
-    100% { opacity: 1; transform: translateY(0); }
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .question_bubble {
@@ -53,7 +60,7 @@ body {
     max-width: 60%;
     min-width: 30px;
     padding: 8px 12px;
-    background-color: #FF5347; 
+    background-color: #FF5347;
     border-radius: 18px 0px 18px 18px;
     color: #FFF;
     margin-bottom: 15px;
@@ -83,8 +90,8 @@ body {
     justify-content: space-between;
     gap: 12px;
     align-items: center;
-    background-color: #333; 
-    padding: 8px 16px;
+    background-color: #333;
+    /* padding: 8px 16px; */
     bottom: 20px;
     left: 20px;
     right: 20px;
@@ -98,20 +105,21 @@ body {
     padding: 8px 12px;
     border-radius: 12px;
     border: none;
-    background-color: #202020; 
+    background-color: #202020;
     transition: background-color 0.2s;
     resize: none;
-    font-family: Arial, sans-serif; 
-    font-size: 15px; 
+    font-family: Arial, sans-serif;
+    font-size: 15px;
 }
 
 #question:focus {
     outline: none;
-    background-color: #949090; 
-    
+    background-color: #949090;
+
 }
 
 .submit_button {
+    width:95%;
     background-color: #FF6347;
     border: none;
     color: #FFF;
@@ -124,6 +132,7 @@ body {
     border-radius: 12px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     transition: transform 0.1s;
+    
 }
 
 .submit_button:hover {
@@ -173,34 +182,32 @@ header {
     background-color: #555;
 }
 
-/* login */
-
-/* 로그인 폼 */
-.login-form {
+/* 로그인, 회원가입 폼 */
+.sign-form {
+    /* display:flex; */
     width: 100%;
     max-width: 400px;
-    padding: 70px;
+    padding-top: 70px;
     margin: 0 auto;
     /* background-color: #333; */
     border-radius: 5px;
 }
 
-.login-form .form-group {
+.sign-form .form-group {
     margin-bottom: 15px;
 }
 
-.login-form label {
+.sign-form label {
     display: block;
     font-size: 18px;
     color: #ccc;
     margin-bottom: 5px;
 }
 
-.login-form input[type="text"],
-.login-form input[type="password"] {
+.sign-form input[type="text"],
+.sign-form input[type="password"] {
     width: 95%;
     height: 40px;
-    /* padding: 0 10px; */
     border: 1px solid #555;
     border-radius: 3px;
     background-color: #222;
@@ -208,8 +215,8 @@ header {
     font-size: 14px;
 }
 
-.login-form input[type="submit"] {
-    width: 95%;
+.sign-form input[type="submit"] {
+    width: 100%;
     height: 40px;
     /* padding: 0 10px; */
     border: none;
@@ -221,18 +228,18 @@ header {
     cursor: pointer;
 }
 
-.login-form input[type="submit"]:hover {
+.sign-form input[type="submit"]:hover {
     background-color: #ff5347ec;
 }
 
-/* 반응형 크기 */
+/* 반응형 크기
 @media screen and (max-width: 768px) {
-    .login-form {
+    .sign-form {
         width: 95%;
     }
-}
+} */
 
 
-.login_error_form {
-    color:#949090;
+.sign_error_form {
+    color: #949090;
 }

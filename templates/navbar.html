@@ -11,6 +11,11 @@
                 {% else %}
                 <li> <a class="nav-link" href="{% url 'common:login' %}">Login</a></li>
                 {% endif %}
+                <li>
+                    {% if not user.is_authenticated %}
+                    <a class="nav-link" href="{% url 'common:signup' %}">Signup</a>
+                    {% endif %}
+                </li>
             </ul>
         </nav>
     </header>

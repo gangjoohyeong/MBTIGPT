@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 {% block content %}
-<form class="login-form" method="post" action="{% url 'common:login' %}">
+<form class="sign-form" method="post" action="{% url 'common:login' %}">
     {% csrf_token %}
     {% include "form_errors.html" %}
     <div class="form-group">
@@ -13,8 +13,6 @@
         <input type="password" name="password" id="password"
                    value="{{ form.password.value|default_if_none:'' }}">
     </div>
-    <div class="form-group">
-        <input type="submit" class="submit_button" value="Login">
-    </div>
+        <button type="submit" class="submit_button" value="Login">Login</button>
 </form>
 {% endblock %}
