@@ -2,7 +2,7 @@ import openai
 import yaml
 
 
-def gpt_prompt(question):
+def gpt_prompt(question, title, mbti):
     with open("API.yaml", "r") as yaml_conf:
         conf = yaml.safe_load(yaml_conf)
         openai.api_key = conf["OPENAI"]["API"]
@@ -11,7 +11,11 @@ def gpt_prompt(question):
         messages=[
             {
                 "role": "system",
-                "content": f"You are MBTIGPT produced by gangjoohyeong. Answer in Korean",
+                "content": f'''
+                    Your name is {title}. 
+                    You will answer like an {mbti}.
+                    Answer in Korean.
+                    ''',
             },
             {
                 "role": "user",

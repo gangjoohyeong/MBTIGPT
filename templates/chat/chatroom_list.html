@@ -1,12 +1,67 @@
 {% extends 'base.html' %}
 {% block content %}
+
+<div class="list_body">
+<div class="friend">
+    <h3><a href="{% url 'chat:chatroom_create' %}">친구 사귀기</a></h3>
+</div>
+
 {% if chatroom_list %}
-    <ul>
+<div class="chatroom_list">
     {% for chatroom in chatroom_list %}
-        <li><a href="{% url 'chat:detail' chatroom.id %}">{{ chatroom.title }}</a></li>
+    <div class="chatroom_item">
+        <a href="{% url 'chat:detail' chatroom.id %}">{{ chatroom.title }} [{{ chatroom.mbti }}]</a>
+    </div>
     {% endfor %}
-    </ul>
+</div>
 {% else %}
-    <p>채팅방이 없습니다.</p>
+<p>채팅방이 없습니다.</p>
 {% endif %}
+</div>
+
+<style scoped>
+    .list_body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .friend {
+        display: flex;
+        text-align: center;
+        flex-direction: column;
+        gap: 12px;
+        padding: 20px;
+        font-size: 20px;
+        width: 300px;
+    }
+    .chatroom_list {
+        display: flex;
+        text-align: center;
+        flex-direction: column;
+        gap: 12px;
+        padding: 20px;
+        font-size: 17px;
+        width: 300px;
+    }
+    
+    .chatroom_item {
+        background-color: #333;
+        padding: 12px;
+        border-radius: 12px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        transition: transform 0.1s;
+    }
+    
+    .chatroom_item a {
+        text-decoration: none;
+        color: #FFF;
+    }
+    
+    .chatroom_item:hover {
+        transform: scale(1.03);
+    }
+    
+</style>
+
 {% endblock %}

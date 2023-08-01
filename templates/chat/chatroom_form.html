@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="chatroom_form">
+    <h5>친구 만들기</h5>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">친구+1</button>
+    </form>
+</div>
+<style scoped>
+    .chatroom_form {
+        color: white;
+    }
+
+</style>
+{% endblock %}
