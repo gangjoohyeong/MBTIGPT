@@ -1,3 +1,5 @@
+{% extends 'base.html' %}
+{% block content %}
 {% if chatroom_list %}
     <ul>
     {% for chatroom in chatroom_list %}
@@ -7,3 +9,4 @@
 {% else %}
     <p>채팅방이 없습니다.</p>
 {% endif %}
+{% endblock %}
