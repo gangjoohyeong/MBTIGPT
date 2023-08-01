@@ -119,7 +119,7 @@ body {
 }
 
 .submit_button {
-    width:95%;
+    /* width:95%; */
     background-color: #FF6347;
     border: none;
     color: #FFF;
