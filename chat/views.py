@@ -11,7 +11,7 @@ from .forms import ChatroomForm
 
 
 
-
+@login_required(login_url='common:login')
 def index(request):
     chatroom_list = Chatroom.objects.filter(user=request.user).order_by('-create_date')
     context = {'chatroom_list': chatroom_list}
