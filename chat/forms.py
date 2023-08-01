@@ -12,3 +12,10 @@ class ChatroomForm(forms.ModelForm):
     class Meta:
         model = Chatroom
         fields = ['title', 'mbti']
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.fields['title'].label = '친구 이름'
+        self.fields['title'].widget = forms.TextInput()
+        
+        self.fields['mbti'].label = '친구의 MBTI' 
