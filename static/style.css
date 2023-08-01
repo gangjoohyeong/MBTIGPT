@@ -172,3 +172,67 @@ header {
 .nav-links li a:hover {
     background-color: #555;
 }
+
+/* login */
+
+/* 로그인 폼 */
+.login-form {
+    width: 100%;
+    max-width: 400px;
+    padding: 70px;
+    margin: 0 auto;
+    /* background-color: #333; */
+    border-radius: 5px;
+}
+
+.login-form .form-group {
+    margin-bottom: 15px;
+}
+
+.login-form label {
+    display: block;
+    font-size: 18px;
+    color: #ccc;
+    margin-bottom: 5px;
+}
+
+.login-form input[type="text"],
+.login-form input[type="password"] {
+    width: 95%;
+    height: 40px;
+    /* padding: 0 10px; */
+    border: 1px solid #555;
+    border-radius: 3px;
+    background-color: #222;
+    color: #fff;
+    font-size: 14px;
+}
+
+.login-form input[type="submit"] {
+    width: 95%;
+    height: 40px;
+    /* padding: 0 10px; */
+    border: none;
+    border-radius: 3px;
+    background-color: #FF5347;
+    color: #fff;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.login-form input[type="submit"]:hover {
+    background-color: #ff5347ec;
+}
+
+/* 반응형 크기 */
+@media screen and (max-width: 768px) {
+    .login-form {
+        width: 95%;
+    }
+}
+
+
+.login_error_form {
+    color:#949090;
+}
