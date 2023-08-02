@@ -16,6 +16,13 @@
 
 <br>
 
+## TODO
+
+1. DB를 PostgreSQL로 변경 후 Server에 Docker로 올리기
+2. 친구 사귀기 UI 업데이트
+3. MBTI별 GPT 페르소나 업데이트
+
+
 ## Thanks to
 
 로고 제작: [이은지](https://github.com/eunjios)
