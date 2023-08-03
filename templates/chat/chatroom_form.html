@@ -1,25 +1,20 @@
 {% extends 'base.html' %}
-
 {% block content %}
 <div class="chatroom-form">
-    <form method="post">
+    <form method="post" class="form-centered">
         {% csrf_token %}
         <div class="form-group">
             <label for="id_title">친구 이름은? </label>
             <input type="text" name="title" id="id_title" required>
         </div>
         <div class="radio-group">
-            <div class="radio-group">
-                {% for mbti, label in form.mbti.field.choices %}
-                    <input type="radio" id="{{ mbti }}" name="mbti" value="{{ mbti }}" {% if forloop.first %}checked{% endif %} required>
-                    <label for="{{ mbti }}">{{ label }}</label>
-                {% endfor %}
-            </div>
-        </div>
-        <input type="submit" value="친구 사귀기">
+            <div class="radio-group"> {% for mbti, label in form.mbti.field.choices %} <input type="radio"
+                    id="{{ mbti }}" name="mbti" value="{{ mbti }}" {% if forloop.first %}checked{% endif %} required>
+                <label for="{{ mbti }}">{{ label }}</label> {% endfor %} </div>
+        </div> <input type="submit" value="친구 사귀기">
     </form>
 </div>
-  <style scoped>
+<style scoped>
     /* 채팅방 폼 */
     .chatroom-form {
         /* display:flex; */
@@ -29,6 +24,7 @@
         margin: 0 auto;
         font-family: Arial, Helvetica, sans-serif;
     }
+
     .form-group {
         display: flex;
         margin: 0 auto;
@@ -42,7 +38,8 @@
     }
 
     .form-group input[type="text"] {
-        flex: 1; /* 나머지 공간 모두 사용 */
+        flex: 1;
+        /* 나머지 공간 모두 사용 */
         width: 60px;
     }
 
@@ -55,7 +52,7 @@
     }
 
     .chatroom-form input[type="text"] {
-        width: 95%;
+        width: 80%;
         height: 40px;
         border: 1px solid #555;
         border-radius: 5px;
@@ -65,7 +62,7 @@
     }
 
     .chatroom-form input[type="submit"] {
-        width: 100%;
+        width: 60%;
         height: 40px;
         /* padding: 0 10px; */
         border: none;
@@ -76,6 +73,13 @@
         font-weight: bold;
         cursor: pointer;
         margin-top: 20px
+    }
+
+    .form-centered {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        /* 가운데 정렬 */
     }
 
     .chatroom-form input[type="submit"]:hover {
@@ -95,7 +99,7 @@
 
     .radio-group label {
         display: block;
-        width: 100px;
+        width: 60px;
         height: 40px;
         line-height: 40px;
         border: 2px solid #555;
@@ -104,15 +108,15 @@
         color: #fff;
         background-color: #222;
         cursor: pointer;
-        margin: 10px; /* 라디오 버튼 사이에 10px 간격 추가 */
+        margin: 10px;
+        /* 라디오 버튼 사이에 10px 간격 추가 */
     }
 
     .radio-group input[type="radio"] {
         display: none;
     }
 
-    .radio-group input[type="radio"]:checked + label {
+    .radio-group input[type="radio"]:checked+label {
         background-color: #FF5347;
     }
-</style>
-{% endblock %}
+</style> {% endblock %}
