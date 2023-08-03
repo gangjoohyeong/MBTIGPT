@@ -37,8 +37,9 @@
 ## TODO
   
 - [x] DB를 PostgreSQL로 변경 후 GCE에 Docker로 올리기
-- [ ] 친구 사귀기 UI 업데이트
-- [ ] MBTI별 GPT 페르소나 업데이트
+- [x] 친구 사귀기 UI 업데이트
+- [ ] 유저 이름 추가해서 ID 대신 이름 추가하기
+- [ ] MBTI별 GPT 페르소나 업데이트 (Prompt Enginnering)
 - [ ] 메인 서버 aistages에서 클라우드 서비스로 이관
 
 ## Thanks to
