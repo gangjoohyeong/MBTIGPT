@@ -3,7 +3,7 @@
 
 <div class="list_body">
 <div class="friend">
-    <h3><a href="{% url 'chat:chatroom_create' %}">친구 사귀기</a></h3>
+    <h3><a href="{% url 'chat:chatroom_create' %}">새 친구를 찾아보자</a></h3>
 </div>
 
 {% if chatroom_list %}
@@ -31,10 +31,16 @@
         text-align: center;
         flex-direction: column;
         gap: 12px;
-        padding: 20px;
-        font-size: 20px;
-        width: 300px;
+        margin-top: 30px;
+        font-size: 18px;
+        width: 250px;
+        border-radius: 12px;
+        background-color: #FF5346;
     }
+    .friend:hover {
+        transform: scale(1.03);
+    }
+    
     .chatroom_list {
         display: flex;
         text-align: center;
@@ -46,7 +52,7 @@
     }
     
     .chatroom_item {
-        background-color: #333;
+        background-color: #476FFF;
         padding: 12px;
         border-radius: 12px;
         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);

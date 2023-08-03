@@ -12,7 +12,7 @@ body {
 }
 
 .main_page h1 {
-    color:#ccc;
+    color:white;
 }
 .explaination {
     color:white;
@@ -26,18 +26,26 @@ body {
     margin: 0;
     background-color: #000;
     font-size: 17px;
-    padding: 0 150px 0 150px;
+    padding: 0 130px 0 130px;
+  }
+  
+  /* 모바일 환경에서의 스타일 적용 */
+  @media (max-width: 768px) {
+    .detail_body {
+      padding: 0 20px 0 20px;
+    }
+  }
 
-}
-
-.detail_body h2 {
+  .detail_body h3 {
     color: #FFF;
     text-align: center;
-    padding: 10px 25px 10px 10px;
-    /* background-color: #f8f8f827; */
-    /* border-radius: 20px; */
+    padding: 10px;
+    background-color: #476fffc1;
+    border-radius: 10px;
+    margin: 30px auto 50px auto;
+    max-width: 600px;
+    min-width: 300px;
     display: inline-block;
-    margin: 20px;
 }
 
 
@@ -88,7 +96,7 @@ body {
     max-width: 60%;
     min-width: 30px;
     padding: 8px 12px;
-    background-color: #444;
+    background-color: #476FFF;
     border-radius: 0px 18px 18px 18px;
     color: #FFF;
     margin-bottom: 15px;
@@ -245,14 +253,6 @@ header {
 .sign-form input[type="submit"]:hover {
     background-color: #ff5347ec;
 }
-
-/* 반응형 크기
-@media screen and (max-width: 768px) {
-    .sign-form {
-        width: 95%;
-    }
-} */
-
 
 .sign_error_form {
     color: #949090;

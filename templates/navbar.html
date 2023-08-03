@@ -6,15 +6,15 @@
                 <a href="{% url 'index' %}"><img src="{% static 'Component1.svg' %}" style="width:100px"/></a>
             </div>
             <ul class="nav-links">
-                <li><a href="{% url 'chat:index' %}">Chat</a></li>
+                <li><a href="{% url 'chat:index' %}">채팅</a></li>
                 {% if user.is_authenticated %}
-                <li><a class="nav-link" href="{% url 'common:logout' %}">Logout</a></li>
+                <li><a class="nav-link" href="{% url 'common:logout' %}">로그아웃</a></li>
                 {% else %}
-                <li> <a class="nav-link" href="{% url 'common:login' %}">Login</a></li>
+                <li> <a class="nav-link" href="{% url 'common:login' %}">로그인</a></li>
                 {% endif %}
                 <li>
                     {% if not user.is_authenticated %}
-                    <a class="nav-link" href="{% url 'common:signup' %}">Sign up</a>
+                    <a class="nav-link" href="{% url 'common:signup' %}">회원가입</a>
                     {% endif %}
                 </li>
             </ul>
