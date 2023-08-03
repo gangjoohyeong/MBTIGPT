@@ -1,21 +1,15 @@
 from django import forms
-from chat.models import Chatroom
+from .models import Chatroom
 
 class ChatroomForm(forms.ModelForm):
-    MBTI_CHOICES = [
+    MBTI_CHOICES = (
         ('ISTJ', 'ISTJ'),
+        ('INTP', 'INTP'),
         ('ENFP', 'ENFP'),
-    ]
-
-    mbti = forms.ChoiceField(choices=MBTI_CHOICES, widget=forms.RadioSelect)
-
+        ('ENTJ', 'ENTJ'),
+    )
+    mbti = forms.ChoiceField(choices=MBTI_CHOICES)
+    
     class Meta:
         model = Chatroom
         fields = ['title', 'mbti']
-
-    def __init__(self, *args, **kwargs):
-        super().__init__(*args, **kwargs)
-        self.fields['title'].label = '친구 이름'
-        self.fields['title'].widget = forms.TextInput()
-        
-        self.fields['mbti'].label = '친구의 MBTI' 
