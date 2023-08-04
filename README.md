@@ -40,9 +40,11 @@
 <div align="center">
 
 
-<img width="800" alt="스크린샷 2023-08-01 오후 5 30 00" src="https://github.com/gangjoohyeong/MBTIGPT/assets/93419379/d32b4000-248e-46a3-a282-f28bda96ba4a">
+<img width="800" alt="스크린샷 2023-08-04 오후 11 30 25" src="https://github.com/gangjoohyeong/MBTIGPT/assets/93419379/438051cb-bdfc-4b1b-826f-3d6447e0c2d1">
+<img width="800" alt="스크린샷 2023-08-04 오후 11 30 47" src="https://github.com/gangjoohyeong/MBTIGPT/assets/93419379/8de0b741-f4ea-45b0-8145-43e3b5c6eb2d">
+<img width="800" alt="스크린샷 2023-08-04 오후 11 31 07" src="https://github.com/gangjoohyeong/MBTIGPT/assets/93419379/016f5c30-cb5b-4a4d-a700-1286590d6f17">
+<img width="800" alt="스크린샷 2023-08-04 오후 11 31 20" src="https://github.com/gangjoohyeong/MBTIGPT/assets/93419379/140332a1-6171-467b-95f4-cafcf3a3d66e">
 
-<img width="800" alt="스크린샷 2023-08-01 오후 5 33 28" src="https://github.com/gangjoohyeong/MBTIGPT/assets/93419379/9a6236a5-e564-4a30-8170-ed6ff0eb1ba8">
 
 </div>
 
