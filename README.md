@@ -12,7 +12,7 @@
 <a href="https://www.djangoproject.com/"><img src="https://img.shields.io/badge/Django-092E20?style=flat-square&logo=django&logoColor=white" alt="Django"></a>
 <a href="https://www.postgresql.org/"><img src="https://img.shields.io/badge/PostgreSQL-336791?style=flat-square&logo=postgresql&logoColor=white" alt="PostgreSQL"></a>
 <a href="https://www.docker.com/"><img src="https://img.shields.io/badge/Docker-2496ED?style=flat-square&logo=docker&logoColor=white" alt="Docker"></a>
-<a href="https://nginx.org/en/"><img src="https://img.shields.io/badge/Nginx-009639?style=flat-square&logo=nginx&logoColor=white" alt="Nginx"></a>
+<a href="https://nginx.org/en/"><img src="https://img.shields.io/badge/NGINX-009639?style=flat-square&logo=nginx&logoColor=white" alt="NGINX"></a>
 <a href="https://cloud.google.com/compute/"><img src="https://img.shields.io/badge/Google%20Compute%20Engine-4285F4?style=flat-square&logo=google-cloud&logoColor=white" alt="Google Compute Engine"></a>
 
 
@@ -54,6 +54,7 @@
 - [x] 친구 사귀기 UI 업데이트
 - [ ] 유저 이름 추가해서 ID 대신 이름 추가하기
 - [ ] MBTI별 GPT 페르소나 업데이트 (Prompt Enginnering)
+- [ ] NGINX 웹서버 구축
 - [ ] 메인 서버 aistages에서 클라우드 서비스로 이관
 
 <br>
