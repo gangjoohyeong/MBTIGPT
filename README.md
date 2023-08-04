@@ -27,8 +27,7 @@
 <div align="center">
 
 
-<img src="https://github.com/gangjoohyeong/MBTIGPT/assets/93419379/5dab8bbe-caf2-4258-8c23-37902aab6056" width="800px" />
-
+<img src="https://github.com/gangjoohyeong/MBTIGPT/assets/93419379/1feb95f6-7c49-4712-ad4c-1309cba0f4b1)" width="800px" />
 
 </div>
 
