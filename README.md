@@ -1,7 +1,7 @@
 # MBTIGPT
 
 - 진행 중인 프로젝트
-- 데모 서비스: http://34.16.160.252/
+- 데모 서비스: http://mbtigpt.site/
 
 
 <br>
