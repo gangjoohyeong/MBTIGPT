@@ -2,6 +2,7 @@ version: '3.8'
 
 services:
   web:
+    platform: linux/amd64
     build: .
     command: gunicorn config.wsgi:application --bind 0.0.0.0:8000
     volumes:
@@ -15,6 +16,7 @@ services:
       - nginx
 
   nginx:
+    platform: linux/amd64
     image: nginx:latest
     volumes:
       - ./config/nginx.conf:/etc/nginx/conf.d/default.conf
