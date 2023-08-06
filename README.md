@@ -95,7 +95,7 @@ docker-compose up --build
 - [x] NGINX 웹서버 구축
 - [x] 메인 서버 aistages에서 클라우드 서비스로 이관
 - [ ] SSL 인증서 발급 (https)
-
+- [ ] Docker-compose 개발/프로덕션 분리
 <br>
 
 ## Thanks to
