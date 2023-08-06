@@ -18,6 +18,38 @@
 
 </div>
 
+##  Settings
+
+```bash
+git clone https://github.com/gangjoohyeong/MBTIGPT.git
+```
+
+<br>
+
+**MBTIGPT/.env**
+```
+DB_NAME='postgres'
+DB_USER='user'
+DB_HOST='111.111.111.111'
+DB_PASSWORD='password'
+DB_PORT='5432'
+```
+
+**MBTIGPT/API.yaml**
+```
+OPENAI:
+  API: sk-xxxxxxxxxxxxxxxxxxxxxxxxxxxx
+```
+
+**RUN**
+
+```bash
+docker-compose up --build
+```
+
+
+
+
 <br>
 
 ## Project architecture
