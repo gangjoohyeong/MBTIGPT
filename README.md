@@ -13,7 +13,7 @@
 <a href="https://www.postgresql.org/"><img src="https://img.shields.io/badge/PostgreSQL-336791?style=flat-square&logo=postgresql&logoColor=white" alt="PostgreSQL"></a>
 <a href="https://www.docker.com/"><img src="https://img.shields.io/badge/Docker-2496ED?style=flat-square&logo=docker&logoColor=white" alt="Docker"></a>
 <a href="https://nginx.org/en/"><img src="https://img.shields.io/badge/NGINX-009639?style=flat-square&logo=nginx&logoColor=white" alt="NGINX"></a>
-<a href="https://cloud.google.com/compute/"><img src="https://img.shields.io/badge/Google%20Compute%20Engine-4285F4?style=flat-square&logo=google-cloud&logoColor=white" alt="Google Compute Engine"></a>
+<a href="https://cloud.google.com/"><img src="https://img.shields.io/badge/GCP-4285F4?style=flat-square&logo=google-cloud&logoColor=white" alt="GCP"></a>
 
 
 </div>
