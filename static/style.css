@@ -258,3 +258,12 @@ header {
     color: #949090;
 }
 
+.copyright {
+    color:rgb(167, 167, 167);
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    font-size: 4px;
+    text-align: center;
+    padding: 5px 0;
+}
