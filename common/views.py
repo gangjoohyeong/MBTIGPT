@@ -8,9 +8,11 @@ def signup(request):
         form = UserForm(request.POST)
         if form.is_valid():
             form.save()
+            first_name = form.cleaned_data.get('first_name')
+            last_name = form.cleaned_data.get('last_name')
             username = form.cleaned_data.get('username')
             raw_password = form.cleaned_data.get('password1')
-            user = authenticate(username=username, password=raw_password)  # 사용자 인증
+            user = authenticate(first_name=first_name, last_name=last_name, username=username, password=raw_password)  # 사용자 인증
             login(request, user)  # 로그인
             return redirect('index')
     else:

@@ -4,13 +4,13 @@
 
 <div class="main_page">
     {% if user.is_authenticated %}
-    <h1>{{ user.username }}님 안녕하세요!</h1>
+    <h1>{{ user.last_name }}님 어서와요!</h1>
     {% else %}
     <h1>환영합니다!</h1>
     {% endif %}
 
     <div class="explaination">
-        <b>MBTIGPT</b>는 인공지능에게 MBTI를 부여합니다.
+        <b>MBTIGPT</b>로 원하는 MBTI의 친구를 사귀어 보세요.
     </div>
     <br><br>
 

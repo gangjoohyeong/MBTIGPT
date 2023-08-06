@@ -29,9 +29,13 @@ def detail(request, chatroom_id):
 def qna_create(request, chatroom_id):
     if request.method == "POST":
         chatroom = get_object_or_404(Chatroom, pk=chatroom_id)
+        user = request.user
+        qna_count = Qna.objects.filter(chatroom_id=chatroom.id).count()
+        latest_qnas = Qna.objects.filter(chatroom_id=chatroom.id).order_by('-create_date')[:min(qna_count, 4)]
+        qna_pairs = [(qna.question, qna.answer) for qna in latest_qnas]
         question = request.POST.get('question')
-        answer = gpt_prompt(question, chatroom.title, chatroom.mbti)
-        qna = Qna(chatroom=chatroom, question=question, answer=answer, create_date=timezone.now(), user=request.user)
+        answer = gpt_prompt(question, chatroom.title, chatroom.mbti, qna_pairs, user.last_name)
+        qna = Qna(chatroom=chatroom, question=question, answer=answer, create_date=timezone.now(), user=user)
         qna.save()
 
         # JSON 형식으로 반환
