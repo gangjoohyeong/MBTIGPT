@@ -1,7 +1,6 @@
 # MBTIGPT
 
-- 진행 중인 프로젝트
-- 서비스: http://mbtigpt.site/
+- 서비스 중단
 
 
 <br>
@@ -83,19 +82,6 @@ docker-compose up --build
 
 
 </div>
-
-<br>
-
-## TODO
-  
-- [x] DB를 PostgreSQL로 변경 후 GCE에 Docker로 올리기
-- [x] 친구 사귀기 UI 업데이트
-- [x] 유저 이름 추가해서 ID 대신 이름 추가하기
-- [x] MBTI별 GPT 페르소나 업데이트 (Prompt Engineering)
-- [x] NGINX 웹서버 구축
-- [x] 메인 서버 aistages에서 클라우드 서비스로 이관
-- [ ] SSL 인증서 발급 (https)
-- [ ] Docker-compose 개발/프로덕션 분리
 <br>
 
 ## Thanks to
